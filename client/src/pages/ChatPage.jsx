@@ -50,7 +50,7 @@ const ChatPage = ({ username }) => {
                   username === message.username && "ml-96"
                 }`}
               >
-                <div className="bg-green-400">
+                <div className="bg-rose-400">
                   {message.message && (
                     <h3 className="textlg px-2 font-bold">
                       {message.username.charAt(0).toUpperCase()}
