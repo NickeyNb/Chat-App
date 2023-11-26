@@ -13,6 +13,12 @@ const io = new Server(server, {
 // socket are like phone number
 io.on("connection", (socket) => {
     console.log(`User connected ${socket.id}`);
+    // receiving "send-message" event
+    socket.on("send-message", (message) => {
+        console.log(message); // {} messageData from fe
+        // Broadcating the received data to all connected user
+        io.emit("received-message", message);
+    });
     socket.on("disconnect", () => {
         console.log(`User disconnected ${socket.id}`);
     });
